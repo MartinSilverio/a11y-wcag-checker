@@ -10,6 +10,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+//TODO Remove this later after normalizing data
+// const formattedData = WCAG_DATA.map(({ guidelines, ...otherData }) => {
+//   const guideline_ref_ids = guidelines.map((item) => item.ref_id);
+//   return {
+//     ...otherData,
+//     guideline_ref_ids,
+//   };
+// });
+
+// console.log(formattedData);
+
 function App() {
   const classes = useStyles();
 

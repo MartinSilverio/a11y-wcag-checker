@@ -3,15 +3,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-import { Hidden } from '@material-ui/core';
+import { Hidden, Checkbox } from '@material-ui/core';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleNavMenu } from '../../redux/nav/navActions';
+import { selectOpenNav } from '../../redux/nav/navSelector';
+import ListSectionTitle from '../list-section-title/ListSectionTitle';
+import { selectComplianceLevels } from '../../redux/filter/filterSelector';
+import { toggleComplianceLevel } from '../../redux/filter/filterActions';
 
 const drawerWidth = 240;
 
@@ -32,35 +32,49 @@ function NavDrawer(props) {
   const classes = useStyles();
   // const theme = useTheme();
   // const matches = useMediaQuery(theme.breakpoints.down('xs'));
-  const navDrawerOpen = useSelector((state) => state.nav.openNav);
+  const navDrawerOpen = useSelector(selectOpenNav);
+  const filters = useSelector(selectComplianceLevels);
   const dispatch = useDispatch();
 
   const handleDrawerToggle = () => {
     dispatch(toggleNavMenu());
   };
 
+  const handleFilterCheckbox = (value) => () => {
+    console.log(value);
+    dispatch(toggleComplianceLevel(value));
+  };
+
   const drawer = (
     <div className={classes.drawerContainer}>
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+      <List subheader={<ListSectionTitle title={'Compliance Level'} />}>
+        <ListItem button onClick={handleFilterCheckbox('A')}>
+          <Checkbox
+            checked={filters['A']}
+            tabIndex={-1}
+            disableRipple
+            inputProps={{ 'aria-labelledby': 'Single A Compliance' }}
+          />
+          <ListItemText primary={'A'} />
+        </ListItem>
+        <ListItem button onClick={handleFilterCheckbox('AA')}>
+          <Checkbox
+            checked={filters['AA']}
+            tabIndex={-1}
+            disableRipple
+            inputProps={{ 'aria-labelledby': 'Double A Compliance' }}
+          />
+          <ListItemText primary={'AA'} />
+        </ListItem>
+        <ListItem button onClick={handleFilterCheckbox('AAA')}>
+          <Checkbox
+            checked={filters['AAA']}
+            tabIndex={-1}
+            disableRipple
+            inputProps={{ 'aria-labelledby': 'Triple A Compliance' }}
+          />
+          <ListItemText primary={'AAA'} />
+        </ListItem>
       </List>
     </div>
   );
