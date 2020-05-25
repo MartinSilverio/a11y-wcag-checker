@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState, Fragment } from 'react';
 import { useDispatch } from 'react-redux';
 import WcagCheckbox from '../wcag-checkbox/WcagCheckbox';
 import {
@@ -7,25 +7,38 @@ import {
   CardHeader,
   CardContent,
   Typography,
-  Divider,
+  Link,
+  CardActions,
+  IconButton,
+  Collapse,
 } from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import { toggleSuccessCriteria } from '../../redux/wcag/wcagActions';
+import useStyles from './WcagCardStyles';
 
 function WcagCard({ wcagGuideline }) {
+  const [expanded, setExpanded] = useState(false);
   const {
     ref_id,
     title,
     short_description,
+    description,
     url,
     checked,
     level,
+    special_cases,
+    notes,
   } = wcagGuideline;
   const dispatch = useDispatch();
   const handleToggleSuccessCriteria = useCallback(
     () => dispatch(toggleSuccessCriteria(ref_id)),
     [dispatch, ref_id]
   );
+  const handleToggleExpand = () => {
+    setExpanded(!expanded);
+  };
+  const classes = useStyles();
 
   return (
     <Grid item xs={12}>
@@ -37,19 +50,61 @@ function WcagCard({ wcagGuideline }) {
             xs={1}
             alignItems='center'
             justify='center'
+            className={classes.divider}
             onClick={handleToggleSuccessCriteria}
           >
             <WcagCheckbox checked={checked} />
           </Grid>
-          <Divider orientation='vertical' flexItem />
 
-          <Grid item xs={10}>
-            <CardHeader title={`${ref_id}: ${title}`} />
+          <Grid item xs={11}>
+            <CardHeader
+              disableTypography
+              title={
+                <Typography variant='h3'>
+                  {ref_id}: {title}
+                </Typography>
+              }
+            />
             <CardContent>
-              <Typography>Compliance Level: {level}</Typography>
-              <Typography>{short_description}</Typography>
-              <Typography>Url: {url}</Typography>
+              <Typography paragraph>
+                <strong>Compliance Level:</strong> {level}
+              </Typography>
+              <Typography paragraph>{short_description}</Typography>
+              <Link href={url} variant='body1'>
+                External link to the W3C documentation on {ref_id}
+              </Link>
             </CardContent>
+            <CardActions className={classes.buttonJustify}>
+              <IconButton
+                aria-label={`Show more about ${ref_id}`}
+                onClick={handleToggleExpand}
+                aria-expanded={expanded}
+              >
+                <ExpandMoreIcon />
+              </IconButton>
+            </CardActions>
+            <Collapse in={expanded} timeout='auto' unmountOnExit>
+              <CardContent>
+                <Typography>{description}</Typography>
+                <ul>
+                  {special_cases &&
+                    special_cases.map(({ title, description }) => (
+                      <li key={title}>
+                        <Typography paragraph>{description}</Typography>
+                      </li>
+                    ))}
+                </ul>
+
+                {notes && (
+                  <Fragment>
+                    <Typography variant='h4'>Notes</Typography>
+                    <Typography>{notes[0].content}</Typography>
+                  </Fragment>
+                )}
+
+                <Typography></Typography>
+              </CardContent>
+            </Collapse>
           </Grid>
         </Grid>
       </Card>
