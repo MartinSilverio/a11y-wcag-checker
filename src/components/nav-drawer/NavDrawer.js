@@ -41,7 +41,6 @@ function NavDrawer(props) {
   };
 
   const handleFilterCheckbox = (value) => () => {
-    console.log(value);
     dispatch(toggleComplianceLevel(value));
   };
 
