@@ -395,7 +395,7 @@ export const SUCCESS_CRITERIA = [
     checked: false,
     guideline_ref_id: '1.2',
     section_ref_id: '1',
-    tags: [],
+    tags: [{ id: 1, name: 'video' }],
   },
   {
     ref_id: '1.2.2',
@@ -421,7 +421,7 @@ export const SUCCESS_CRITERIA = [
     checked: false,
     guideline_ref_id: '1.2',
     section_ref_id: '1',
-    tags: [],
+    tags: [{ id: 1, name: 'video' }],
   },
   {
     ref_id: '1.2.3',
@@ -450,7 +450,7 @@ export const SUCCESS_CRITERIA = [
     checked: false,
     guideline_ref_id: '1.2',
     section_ref_id: '1',
-    tags: [],
+    tags: [{ id: 1, name: 'video' }],
   },
   {
     ref_id: '1.2.4',
@@ -475,7 +475,7 @@ export const SUCCESS_CRITERIA = [
     checked: false,
     guideline_ref_id: '1.2',
     section_ref_id: '1',
-    tags: [],
+    tags: [{ id: 1, name: 'video' }],
   },
   {
     ref_id: '1.2.5',
@@ -502,7 +502,7 @@ export const SUCCESS_CRITERIA = [
     checked: false,
     guideline_ref_id: '1.2',
     section_ref_id: '1',
-    tags: [],
+    tags: [{ id: 1, name: 'video' }],
   },
   {
     ref_id: '1.2.6',
@@ -529,7 +529,7 @@ export const SUCCESS_CRITERIA = [
     checked: false,
     guideline_ref_id: '1.2',
     section_ref_id: '1',
-    tags: [],
+    tags: [{ id: 1, name: 'video' }],
   },
   {
     ref_id: '1.2.7',
@@ -557,7 +557,7 @@ export const SUCCESS_CRITERIA = [
     checked: false,
     guideline_ref_id: '1.2',
     section_ref_id: '1',
-    tags: [],
+    tags: [{ id: 1, name: 'video' }],
   },
   {
     ref_id: '1.2.8',
@@ -584,7 +584,7 @@ export const SUCCESS_CRITERIA = [
     checked: false,
     guideline_ref_id: '1.2',
     section_ref_id: '1',
-    tags: [],
+    tags: [{ id: 1, name: 'video' }],
   },
   {
     ref_id: '1.2.9',
@@ -609,7 +609,7 @@ export const SUCCESS_CRITERIA = [
     checked: false,
     guideline_ref_id: '1.2',
     section_ref_id: '1',
-    tags: [],
+    tags: [{ id: 1, name: 'video' }],
   },
   {
     ref_id: '1.3.1',
@@ -844,7 +844,7 @@ export const SUCCESS_CRITERIA = [
     checked: false,
     guideline_ref_id: '1.4',
     section_ref_id: '1',
-    tags: [],
+    tags: [{ id: 1, name: 'video' }],
   },
   {
     ref_id: '1.4.3',
@@ -1051,7 +1051,7 @@ export const SUCCESS_CRITERIA = [
     checked: false,
     guideline_ref_id: '1.4',
     section_ref_id: '1',
-    tags: [],
+    tags: [{ id: 1, name: 'video' }],
   },
   {
     ref_id: '1.4.8',
@@ -1779,7 +1779,7 @@ export const SUCCESS_CRITERIA = [
     checked: false,
     guideline_ref_id: '2.3',
     section_ref_id: '2',
-    tags: [],
+    tags: [{ id: 1, name: 'video' }],
   },
   {
     ref_id: '2.4.1',
