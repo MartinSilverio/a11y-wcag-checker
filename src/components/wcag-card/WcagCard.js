@@ -1,5 +1,6 @@
 import React, { useCallback, useState, Fragment } from 'react';
 import { useDispatch } from 'react-redux';
+import ReactTags from 'react-tag-autocomplete';
 import WcagCheckbox from '../wcag-checkbox/WcagCheckbox';
 import {
   Grid,
@@ -15,7 +16,11 @@ import {
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { motion } from 'framer-motion';
 
-import { toggleSuccessCriteria } from '../../redux/wcag/wcagActions';
+import {
+  toggleSuccessCriteria,
+  deleteTag,
+  addTag,
+} from '../../redux/wcag/wcagActions';
 import useStyles from './WcagCardStyles';
 
 function WcagCard({ wcagGuideline }) {
@@ -30,6 +35,7 @@ function WcagCard({ wcagGuideline }) {
     level,
     special_cases,
     notes,
+    tags,
   } = wcagGuideline;
   const dispatch = useDispatch();
   const handleToggleSuccessCriteria = useCallback(
@@ -39,9 +45,19 @@ function WcagCard({ wcagGuideline }) {
   const handleToggleExpand = () => {
     setExpanded(!expanded);
   };
+
+  const handleAddTag = (tag) => {
+    console.log(tag);
+    dispatch(addTag(tag, ref_id));
+  };
+  const handleDeleteTag = (index) => {
+    console.log('Delete triggered');
+    dispatch(deleteTag(index, ref_id));
+  };
+
   const classes = useStyles();
-  console.log(ref_id);
-  console.log(special_cases);
+  // console.log(ref_id);
+  // console.log(special_cases);
   // console.log(`${ref_id}: ${title}`.length);
 
   return (
@@ -80,9 +96,26 @@ function WcagCard({ wcagGuideline }) {
                   <strong>Compliance Level:</strong> {level}
                 </Typography>
                 <Typography paragraph>{short_description}</Typography>
-                <Link href={url} variant='body1'>
+                <Link href={url} variant='body1' className={classes.linkMargin}>
                   External link to the W3C documentation on {ref_id}
                 </Link>
+
+                <Fragment>
+                  <Typography>
+                    <label for={`tags-${ref_id}`}>
+                      <strong>Tags for {ref_id}</strong>
+                    </label>
+                  </Typography>
+                  <ReactTags
+                    id={`tags-${ref_id}`}
+                    tags={tags}
+                    handleDelete={handleDeleteTag}
+                    handleAddition={handleAddTag}
+                    allowNew
+                    allowBackspace={false}
+                    suggestions={[{ id: 5, name: 'Banana' }]}
+                  />
+                </Fragment>
               </CardContent>
               <CardActions className={classes.buttonJustify}>
                 <IconButton
@@ -111,8 +144,6 @@ function WcagCard({ wcagGuideline }) {
                       <Typography>{notes[0].content}</Typography>
                     </Fragment>
                   )}
-
-                  <Typography></Typography>
                 </CardContent>
               </Collapse>
             </Grid>

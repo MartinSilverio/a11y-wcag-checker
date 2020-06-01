@@ -10,6 +10,10 @@ const useStyles = makeStyles((theme) => ({
   list: {
     listStyleType: 'circle',
   },
+  linkMargin: {
+    display: 'block',
+    marginBottom: theme.spacing(2),
+  },
 }));
 
 export default useStyles;
