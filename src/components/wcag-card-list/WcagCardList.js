@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import WcagCard from '../wcag-card/WcagCard';
-import { selectWcag } from '../../redux/wcag/wcagSelector';
+import { selectWcagAllData } from '../../redux/wcag/wcagSelector';
 import { selectComplianceLevels } from '../../redux/filter/filterSelector';
 import { AnimatePresence } from 'framer-motion';
 // import { toggleSuccessCriteria } from '../../redux/wcag/wcagActions';
@@ -10,7 +10,7 @@ import { AnimatePresence } from 'framer-motion';
 import useStyles from './WcagCardListStyles';
 
 function WcagCardList() {
-  const wcagSuccessCriterias = useSelector(selectWcag);
+  const wcagSuccessCriterias = useSelector(selectWcagAllData);
   const complianceLevels = useSelector(selectComplianceLevels);
   const classes = useStyles();
   // console.log('called');

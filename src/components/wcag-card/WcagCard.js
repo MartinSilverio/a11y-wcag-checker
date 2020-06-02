@@ -102,15 +102,15 @@ function WcagCard({ wcagGuideline }) {
 
                 <Fragment>
                   <Typography>
-                    <label for={`tags-${ref_id}`}>
+                    <label htmlFor={`tags-${ref_id}`}>
                       <strong>Tags for {ref_id}</strong>
                     </label>
                   </Typography>
                   <ReactTags
                     id={`tags-${ref_id}`}
                     tags={tags}
-                    handleDelete={handleDeleteTag}
-                    handleAddition={handleAddTag}
+                    onDelete={handleDeleteTag}
+                    onAddition={handleAddTag}
                     allowNew
                     allowBackspace={false}
                     suggestions={[{ id: 5, name: 'Banana' }]}

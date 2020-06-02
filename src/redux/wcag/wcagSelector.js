@@ -1,4 +1,20 @@
+import { createSelector } from 'reselect';
+
 export const selectWcag = (state) => state.wcag;
+
+export const selectWcagById = createSelector([selectWcag], (wcag) => wcag.byId);
+
+export const selectWcagAllIds = createSelector(
+  [selectWcag],
+  (wcag) => wcag.allIds
+);
+
+export const selectWcagAllData = createSelector(
+  [selectWcagById, selectWcagAllIds],
+  (wcagById, wcagAllIds) => {
+    return wcagAllIds.map((wcagId) => wcagById[wcagId]);
+  }
+);
 
 // export const selectWcagPercievable = createSelector([selectWcag], (wcag) => {
 //   return wcag.find((wcagSection) => {
