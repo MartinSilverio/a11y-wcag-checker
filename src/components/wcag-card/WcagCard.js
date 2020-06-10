@@ -1,5 +1,5 @@
 import React, { useCallback, useState, Fragment } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ReactTags from 'react-tag-autocomplete';
 import WcagCheckbox from '../wcag-checkbox/WcagCheckbox';
 import {
@@ -16,11 +16,9 @@ import {
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { motion } from 'framer-motion';
 
-import {
-  toggleSuccessCriteria,
-  deleteTag,
-  addTag,
-} from '../../redux/wcag/wcagActions';
+import { toggleSuccessCriteria } from '../../redux/wcag/wcagActions';
+import { deleteTagFromWcag, addTagToWcag } from '../../redux/orm/ormActions';
+import { selectTags } from '../../redux/orm/ormSelectors';
 import useStyles from './WcagCardStyles';
 
 function WcagCard({ wcagGuideline }) {
@@ -37,6 +35,7 @@ function WcagCard({ wcagGuideline }) {
     notes,
     tags,
   } = wcagGuideline;
+  const allTags = useSelector((state) => selectTags(state));
   const dispatch = useDispatch();
   const handleToggleSuccessCriteria = useCallback(
     () => dispatch(toggleSuccessCriteria(ref_id)),
@@ -48,17 +47,20 @@ function WcagCard({ wcagGuideline }) {
 
   const handleAddTag = (tag) => {
     console.log(tag);
-    dispatch(addTag(tag, ref_id));
+    let tagPayload = tag.id
+      ? tag
+      : {
+          ...tag,
+          id: tag.name,
+        };
+    dispatch(addTagToWcag(tagPayload, ref_id));
   };
   const handleDeleteTag = (index) => {
     console.log('Delete triggered');
-    dispatch(deleteTag(index, ref_id));
+    dispatch(deleteTagFromWcag(tags[index].id, ref_id));
   };
 
   const classes = useStyles();
-  // console.log(ref_id);
-  // console.log(special_cases);
-  // console.log(`${ref_id}: ${title}`.length);
 
   return (
     <Grid item xs={12}>
@@ -113,7 +115,7 @@ function WcagCard({ wcagGuideline }) {
                     onAddition={handleAddTag}
                     allowNew
                     allowBackspace={false}
-                    // suggestions={[{ id: 5, name: 'Banana' }]}
+                    suggestions={allTags}
                   />
                 </Fragment>
               </CardContent>

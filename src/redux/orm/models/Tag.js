@@ -10,6 +10,18 @@ class Tag extends Model {
         tag = Tag.withId(action.payload.tagId);
         tag.update({ checked: !tag.ref.checked });
         break;
+      case OrmActionTypes.ADD_TAG_TO_WCAG:
+        if (!Tag.filter({ id: action.payload.tag.id }).exists()) {
+          Tag.create({ ...action.payload.tag, checked: true });
+        }
+        break;
+      case OrmActionTypes.DELETE_TAG_FROM_WCAG:
+        tag = Tag.withId(action.payload.tagId);
+        console.log(tag.wcags.count());
+        if (tag.wcags.count() === 0) {
+          tag.delete();
+        }
+        break;
       default:
         break;
     }

@@ -13,3 +13,19 @@ export const toggleLevel = (levelId) => ({
     levelId,
   },
 });
+
+export const deleteTagFromWcag = (tagId, wcagId) => ({
+  type: OrmActionTypes.DELETE_TAG_FROM_WCAG,
+  payload: {
+    tagId,
+    wcagId,
+  },
+});
+
+export const addTagToWcag = (tag, wcagId) => ({
+  type: OrmActionTypes.ADD_TAG_TO_WCAG,
+  payload: {
+    tag,
+    wcagId,
+  },
+});
