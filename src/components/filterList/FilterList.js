@@ -4,8 +4,6 @@ import FilterItem from '../filterItem/FilterItem';
 import ListSectionTitle from '../list-section-title/ListSectionTitle';
 
 function FilterList({ title, listOfFilters, onFilterCheck }) {
-  console.log(title);
-
   return (
     <List subheader={<ListSectionTitle title={title} />}>
       {listOfFilters.map(({ id, name, checked }, ndx) => (

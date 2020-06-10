@@ -10,7 +10,6 @@ import useStyles from './WcagCardListStyles';
 function WcagCardList() {
   const fitleredResults = useSelector((state) => selectFilteredWcags(state));
   const classes = useStyles();
-  console.log('called');
 
   return (
     <AnimatePresence>

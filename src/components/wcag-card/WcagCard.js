@@ -46,7 +46,6 @@ function WcagCard({ wcagGuideline }) {
   };
 
   const handleAddTag = (tag) => {
-    console.log(tag);
     let tagPayload = tag.id
       ? tag
       : {
@@ -56,7 +55,6 @@ function WcagCard({ wcagGuideline }) {
     dispatch(addTagToWcag(tagPayload, ref_id));
   };
   const handleDeleteTag = (index) => {
-    console.log('Delete triggered');
     dispatch(deleteTagFromWcag(tags[index].id, ref_id));
   };
 

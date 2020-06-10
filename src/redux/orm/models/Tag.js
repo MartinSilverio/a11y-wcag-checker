@@ -17,7 +17,6 @@ class Tag extends Model {
         break;
       case OrmActionTypes.DELETE_TAG_FROM_WCAG:
         tag = Tag.withId(action.payload.tagId);
-        console.log(tag.wcags.count());
         if (tag.wcags.count() === 0) {
           tag.delete();
         }
