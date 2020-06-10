@@ -113,7 +113,7 @@ function WcagCard({ wcagGuideline }) {
                     onAddition={handleAddTag}
                     allowNew
                     allowBackspace={false}
-                    suggestions={[{ id: 5, name: 'Banana' }]}
+                    // suggestions={[{ id: 5, name: 'Banana' }]}
                   />
                 </Fragment>
               </CardContent>

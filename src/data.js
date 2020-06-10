@@ -357,7 +357,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.1',
       section_ref_id: '1',
-      tags: [],
+      tags: ['perceivable'],
     },
     '1.2.1': {
       ref_id: '1.2.1',
@@ -398,12 +398,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.2',
       section_ref_id: '1',
-      tags: [
-        {
-          id: 1,
-          name: 'video',
-        },
-      ],
+      tags: ['perceivable', 'video'],
     },
     '1.2.2': {
       ref_id: '1.2.2',
@@ -429,12 +424,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.2',
       section_ref_id: '1',
-      tags: [
-        {
-          id: 1,
-          name: 'video',
-        },
-      ],
+      tags: ['perceivable', 'video', 'audio'],
     },
     '1.2.3': {
       ref_id: '1.2.3',
@@ -463,12 +453,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.2',
       section_ref_id: '1',
-      tags: [
-        {
-          id: 1,
-          name: 'video',
-        },
-      ],
+      tags: ['perceivable', 'video', 'audio'],
     },
     '1.2.4': {
       ref_id: '1.2.4',
@@ -493,12 +478,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.2',
       section_ref_id: '1',
-      tags: [
-        {
-          id: 1,
-          name: 'video',
-        },
-      ],
+      tags: ['perceivable', 'video'],
     },
     '1.2.5': {
       ref_id: '1.2.5',
@@ -525,12 +505,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.2',
       section_ref_id: '1',
-      tags: [
-        {
-          id: 1,
-          name: 'video',
-        },
-      ],
+      tags: ['perceivable', 'video'],
     },
     '1.2.6': {
       ref_id: '1.2.6',
@@ -557,12 +532,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.2',
       section_ref_id: '1',
-      tags: [
-        {
-          id: 1,
-          name: 'video',
-        },
-      ],
+      tags: ['perceivable', 'video'],
     },
     '1.2.7': {
       ref_id: '1.2.7',
@@ -591,12 +561,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.2',
       section_ref_id: '1',
-      tags: [
-        {
-          id: 1,
-          name: 'video',
-        },
-      ],
+      tags: ['perceivable', 'video'],
     },
     '1.2.8': {
       ref_id: '1.2.8',
@@ -623,12 +588,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.2',
       section_ref_id: '1',
-      tags: [
-        {
-          id: 1,
-          name: 'video',
-        },
-      ],
+      tags: ['perceivable', 'video'],
     },
     '1.2.9': {
       ref_id: '1.2.9',
@@ -654,12 +614,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.2',
       section_ref_id: '1',
-      tags: [
-        {
-          id: 1,
-          name: 'video',
-        },
-      ],
+      tags: ['perceivable', 'video', 'audio'],
     },
     '1.3.1': {
       ref_id: '1.3.1',
@@ -685,7 +640,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.3',
       section_ref_id: '1',
-      tags: [],
+      tags: ['perceivable'],
     },
     '1.3.2': {
       ref_id: '1.3.2',
@@ -711,7 +666,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.3',
       section_ref_id: '1',
-      tags: [],
+      tags: ['perceivable'],
     },
     '1.3.3': {
       ref_id: '1.3.3',
@@ -742,7 +697,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.3',
       section_ref_id: '1',
-      tags: [],
+      tags: ['perceivable'],
     },
     '1.3.4': {
       ref_id: '1.3.4',
@@ -772,7 +727,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.3',
       section_ref_id: '1',
-      tags: [],
+      tags: ['perceivable'],
     },
     '1.3.5': {
       ref_id: '1.3.5',
@@ -809,7 +764,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.3',
       section_ref_id: '1',
-      tags: [],
+      tags: ['perceivable'],
     },
     '1.3.6': {
       ref_id: '1.3.6',
@@ -835,7 +790,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.3',
       section_ref_id: '1',
-      tags: [],
+      tags: ['perceivable'],
     },
     '1.4.1': {
       ref_id: '1.4.1',
@@ -865,7 +820,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.4',
       section_ref_id: '1',
-      tags: [],
+      tags: ['perceivable'],
     },
     '1.4.2': {
       ref_id: '1.4.2',
@@ -895,12 +850,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.4',
       section_ref_id: '1',
-      tags: [
-        {
-          id: 1,
-          name: 'video',
-        },
-      ],
+      tags: ['perceivable', 'video'],
     },
     '1.4.3': {
       ref_id: '1.4.3',
@@ -945,7 +895,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.4',
       section_ref_id: '1',
-      tags: [],
+      tags: ['perceivable'],
     },
     '1.4.4': {
       ref_id: '1.4.4',
@@ -970,7 +920,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.4',
       section_ref_id: '1',
-      tags: [],
+      tags: ['perceivable'],
     },
     '1.4.5': {
       ref_id: '1.4.5',
@@ -1014,7 +964,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.4',
       section_ref_id: '1',
-      tags: [],
+      tags: ['perceivable'],
     },
     '1.4.6': {
       ref_id: '1.4.6',
@@ -1059,7 +1009,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.4',
       section_ref_id: '1',
-      tags: [],
+      tags: ['perceivable'],
     },
     '1.4.7': {
       ref_id: '1.4.7',
@@ -1108,12 +1058,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.4',
       section_ref_id: '1',
-      tags: [
-        {
-          id: 1,
-          name: 'video',
-        },
-      ],
+      tags: ['perceivable', 'video'],
     },
     '1.4.8': {
       ref_id: '1.4.8',
@@ -1164,7 +1109,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.4',
       section_ref_id: '1',
-      tags: [],
+      tags: ['perceivable'],
     },
     '1.4.9': {
       ref_id: '1.4.9',
@@ -1196,7 +1141,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.4',
       section_ref_id: '1',
-      tags: [],
+      tags: ['perceivable'],
     },
     '1.4.10': {
       ref_id: '1.4.10',
@@ -1246,7 +1191,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.4',
       section_ref_id: '1',
-      tags: [],
+      tags: ['perceivable'],
     },
     '1.4.11': {
       ref_id: '1.4.11',
@@ -1285,7 +1230,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.4',
       section_ref_id: '1',
-      tags: [],
+      tags: ['perceivable'],
     },
     '1.4.12': {
       ref_id: '1.4.12',
@@ -1335,7 +1280,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.4',
       section_ref_id: '1',
-      tags: [],
+      tags: ['perceivable'],
     },
     '1.4.13': {
       ref_id: '1.4.13',
@@ -1395,7 +1340,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '1.4',
       section_ref_id: '1',
-      tags: [],
+      tags: ['perceivable'],
     },
     '2.1.1': {
       ref_id: '2.1.1',
@@ -1429,7 +1374,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.1',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.1.2': {
       ref_id: '2.1.2',
@@ -1460,7 +1405,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.1',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.1.3': {
       ref_id: '2.1.3',
@@ -1486,7 +1431,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.1',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.1.4': {
       ref_id: '2.1.4',
@@ -1531,7 +1476,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.1',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.2.1': {
       ref_id: '2.2.1',
@@ -1598,7 +1543,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.2',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.2.2': {
       ref_id: '2.2.2',
@@ -1654,7 +1599,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.2',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.2.3': {
       ref_id: '2.2.3',
@@ -1679,7 +1624,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.2',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.2.4': {
       ref_id: '2.2.4',
@@ -1704,7 +1649,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.2',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.2.5': {
       ref_id: '2.2.5',
@@ -1730,7 +1675,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.2',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.2.6': {
       ref_id: '2.2.6',
@@ -1760,7 +1705,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.2',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.3.1': {
       ref_id: '2.3.1',
@@ -1792,7 +1737,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.3',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.3.2': {
       ref_id: '2.3.2',
@@ -1817,7 +1762,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.3',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.3.3': {
       ref_id: '2.3.3',
@@ -1844,12 +1789,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.3',
       section_ref_id: '2',
-      tags: [
-        {
-          id: 1,
-          name: 'video',
-        },
-      ],
+      tags: ['operable', 'video'],
     },
     '2.4.1': {
       ref_id: '2.4.1',
@@ -1874,7 +1814,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.4',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.4.2': {
       ref_id: '2.4.2',
@@ -1898,7 +1838,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.4',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.4.3': {
       ref_id: '2.4.3',
@@ -1924,7 +1864,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.4',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.4.4': {
       ref_id: '2.4.4',
@@ -1951,7 +1891,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.4',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.4.5': {
       ref_id: '2.4.5',
@@ -1976,7 +1916,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.4',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.4.6': {
       ref_id: '2.4.6',
@@ -2001,7 +1941,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.4',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.4.7': {
       ref_id: '2.4.7',
@@ -2026,7 +1966,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.4',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.4.8': {
       ref_id: '2.4.8',
@@ -2051,7 +1991,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.4',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.4.9': {
       ref_id: '2.4.9',
@@ -2077,7 +2017,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.4',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.4.10': {
       ref_id: '2.4.10',
@@ -2111,7 +2051,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.4',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.5.1': {
       ref_id: '2.5.1',
@@ -2142,7 +2082,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.5',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.5.2': {
       ref_id: '2.5.2',
@@ -2202,7 +2142,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.5',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.5.3': {
       ref_id: '2.5.3',
@@ -2232,7 +2172,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.5',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.5.4': {
       ref_id: '2.5.4',
@@ -2272,7 +2212,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.5',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.5.5': {
       ref_id: '2.5.5',
@@ -2321,7 +2261,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.5',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '2.5.6': {
       ref_id: '2.5.6',
@@ -2349,7 +2289,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '2.5',
       section_ref_id: '2',
-      tags: [],
+      tags: ['operable'],
     },
     '3.1.1': {
       ref_id: '3.1.1',
@@ -2375,7 +2315,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '3.1',
       section_ref_id: '3',
-      tags: [],
+      tags: ['understandable'],
     },
     '3.1.2': {
       ref_id: '3.1.2',
@@ -2401,7 +2341,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '3.1',
       section_ref_id: '3',
-      tags: [],
+      tags: ['understandable'],
     },
     '3.1.3': {
       ref_id: '3.1.3',
@@ -2426,7 +2366,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '3.1',
       section_ref_id: '3',
-      tags: [],
+      tags: ['understandable'],
     },
     '3.1.4': {
       ref_id: '3.1.4',
@@ -2451,7 +2391,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '3.1',
       section_ref_id: '3',
-      tags: [],
+      tags: ['understandable'],
     },
     '3.1.5': {
       ref_id: '3.1.5',
@@ -2476,7 +2416,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '3.1',
       section_ref_id: '3',
-      tags: [],
+      tags: ['understandable'],
     },
     '3.1.6': {
       ref_id: '3.1.6',
@@ -2501,7 +2441,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '3.1',
       section_ref_id: '3',
-      tags: [],
+      tags: ['understandable'],
     },
     '3.2.1': {
       ref_id: '3.2.1',
@@ -2526,7 +2466,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '3.2',
       section_ref_id: '3',
-      tags: [],
+      tags: ['understandable'],
     },
     '3.2.2': {
       ref_id: '3.2.2',
@@ -2551,7 +2491,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '3.2',
       section_ref_id: '3',
-      tags: [],
+      tags: ['understandable'],
     },
     '3.2.3': {
       ref_id: '3.2.3',
@@ -2577,7 +2517,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '3.2',
       section_ref_id: '3',
-      tags: [],
+      tags: ['understandable'],
     },
     '3.2.4': {
       ref_id: '3.2.4',
@@ -2605,7 +2545,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '3.2',
       section_ref_id: '3',
-      tags: [],
+      tags: ['understandable'],
     },
     '3.2.5': {
       ref_id: '3.2.5',
@@ -2631,7 +2571,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '3.2',
       section_ref_id: '3',
-      tags: [],
+      tags: ['understandable'],
     },
     '3.3.1': {
       ref_id: '3.3.1',
@@ -2657,7 +2597,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '3.3',
       section_ref_id: '3',
-      tags: [],
+      tags: ['understandable'],
     },
     '3.3.2': {
       ref_id: '3.3.2',
@@ -2683,7 +2623,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '3.3',
       section_ref_id: '3',
-      tags: [],
+      tags: ['understandable'],
     },
     '3.3.3': {
       ref_id: '3.3.3',
@@ -2709,7 +2649,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '3.3',
       section_ref_id: '3',
-      tags: [],
+      tags: ['understandable'],
     },
     '3.3.4': {
       ref_id: '3.3.4',
@@ -2755,7 +2695,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '3.3',
       section_ref_id: '3',
-      tags: [],
+      tags: ['understandable'],
     },
     '3.3.5': {
       ref_id: '3.3.5',
@@ -2779,7 +2719,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '3.3',
       section_ref_id: '3',
-      tags: [],
+      tags: ['understandable'],
     },
     '3.3.6': {
       ref_id: '3.3.6',
@@ -2823,7 +2763,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '3.3',
       section_ref_id: '3',
-      tags: [],
+      tags: ['understandable'],
     },
     '4.1.1': {
       ref_id: '4.1.1',
@@ -2853,7 +2793,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '4.1',
       section_ref_id: '4',
-      tags: [],
+      tags: ['robust'],
     },
     '4.1.2': {
       ref_id: '4.1.2',
@@ -2885,7 +2825,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '4.1',
       section_ref_id: '4',
-      tags: [],
+      tags: ['robust'],
     },
     '4.1.3': {
       ref_id: '4.1.3',
@@ -2911,7 +2851,7 @@ export const SUCCESS_CRITERIA = {
       checked: false,
       guideline_ref_id: '4.1',
       section_ref_id: '4',
-      tags: [],
+      tags: ['robust'],
     },
   },
   allIds: [

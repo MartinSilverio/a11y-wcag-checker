@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import navReducer from './redux/nav/navReducer';
 import wcagReducer from './redux/wcag/wcagReducer';
 import filterReducer from './redux/filter/filterReducer';
-// import tagsReducer from './redux/tags/tagsReducer';
+import ormReducer from './redux/orm/ormReducer';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
@@ -16,6 +16,7 @@ const rootReducer = combineReducers({
   nav: navReducer,
   wcag: wcagReducer,
   filter: filterReducer,
+  orm: ormReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

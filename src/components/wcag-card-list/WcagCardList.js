@@ -2,18 +2,15 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import WcagCard from '../wcag-card/WcagCard';
-import { selectWcagAllData } from '../../redux/wcag/wcagSelector';
-import { selectComplianceLevels } from '../../redux/filter/filterSelector';
 import { AnimatePresence } from 'framer-motion';
-// import { toggleSuccessCriteria } from '../../redux/wcag/wcagActions';
+import { selectFilteredWcags } from '../../redux/orm/ormSelectors';
 
 import useStyles from './WcagCardListStyles';
 
 function WcagCardList() {
-  const wcagSuccessCriterias = useSelector(selectWcagAllData);
-  const complianceLevels = useSelector(selectComplianceLevels);
+  const fitleredResults = useSelector((state) => selectFilteredWcags(state));
   const classes = useStyles();
-  // console.log('called');
+  console.log('called');
 
   return (
     <AnimatePresence>
@@ -23,13 +20,9 @@ function WcagCardList() {
         spacing={2}
         className={classes.gridList}
       >
-        {wcagSuccessCriterias.map((wcagSuccessCriteria) => {
-          const { ref_id, level } = wcagSuccessCriteria;
-          return (
-            complianceLevels[level] && (
-              <WcagCard key={ref_id} wcagGuideline={wcagSuccessCriteria} />
-            )
-          );
+        {fitleredResults.map((wcagSuccessCriteria) => {
+          const { ref_id } = wcagSuccessCriteria;
+          return <WcagCard key={ref_id} wcagGuideline={wcagSuccessCriteria} />;
         })}
       </Grid>
     </AnimatePresence>
@@ -37,3 +30,13 @@ function WcagCardList() {
 }
 
 export default WcagCardList;
+
+// TODO Clean this up, for now used for reference
+// const ormAllTags = useSelector((state) => ormTags(state));
+// // const ormTag = useSelector((state) => ormTags(state, 'video'));
+// const ormTagWcag = useSelector((state) => ormTagWcags(state, 'video'));
+// const ormTagWcagC = useSelector((state) => ormTagWcagsCount(state));
+// const count = useSelector((state) => wcagCount(state, 'AAA'));
+// const ormLevelWcag = useSelector((state) =>
+//   ormLevelWcags(state, ['A', 'AA', 'AAA'])
+// );

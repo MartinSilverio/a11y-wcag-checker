@@ -1,31 +1,20 @@
-import React, { useCallback } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
 import { List } from '@material-ui/core';
 import FilterItem from '../filterItem/FilterItem';
-import { selectComplianceLevels } from '../../redux/filter/filterSelector';
-import { toggleComplianceLevel } from '../../redux/filter/filterActions';
 import ListSectionTitle from '../list-section-title/ListSectionTitle';
 
-function FilterList({ title }) {
-  const dispatch = useDispatch();
-  const complianceLevels = useSelector(selectComplianceLevels);
-
-  const handleFilterCheckbox = useCallback(
-    (value) => {
-      dispatch(toggleComplianceLevel(value));
-    },
-    [dispatch]
-  );
+function FilterList({ title, listOfFilters, onFilterCheck }) {
+  console.log(title);
 
   return (
-    <List subheader={<ListSectionTitle title={'Compliance Level'} />}>
-      {Object.keys(complianceLevels).map((complianceLevel, ndx) => (
+    <List subheader={<ListSectionTitle title={title} />}>
+      {listOfFilters.map(({ id, name, checked }, ndx) => (
         <FilterItem
           key={ndx}
-          onFilterCheck={handleFilterCheckbox}
-          filterValue={complianceLevel}
-          checked={complianceLevels[complianceLevel]}
-          ariaLabel={`"${complianceLevel}" Compliance`}
+          onFilterCheck={onFilterCheck}
+          filterValue={id}
+          checked={checked}
+          ariaLabel={`${name}`}
         />
       ))}
     </List>
