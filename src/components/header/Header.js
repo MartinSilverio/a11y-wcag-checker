@@ -1,28 +1,12 @@
 import React from 'react';
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  IconButton,
-  makeStyles,
-  Hidden,
-} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
 import { useDispatch } from 'react-redux';
 import { toggleNavMenu } from '../../redux/nav/navActions';
 
-const useStyles = makeStyles((theme) => ({
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-  },
-  iconFont: {
-    fontSize: '5rem',
-  },
-}));
+import './Header.scss';
 
 function Header() {
-  const classes = useStyles();
   const dispatch = useDispatch();
 
   function handleDrawerToggle() {
@@ -30,8 +14,8 @@ function Header() {
   }
 
   return (
-    <AppBar position='fixed' className={classes.appBar}>
-      <Toolbar>
+    <header id='root-header'>
+      {/* <Toolbar>
         <Hidden smUp>
           <IconButton
             color='inherit'
@@ -45,8 +29,9 @@ function Header() {
         </Hidden>
         <AccessibilityNewIcon aria-hidden={true} fontSize='large' />
         <Typography variant='h1'>A11y-Checker</Typography>
-      </Toolbar>
-    </AppBar>
+      </Toolbar> */}
+      <h1>A11y-Checker</h1>
+    </header>
   );
 }
 

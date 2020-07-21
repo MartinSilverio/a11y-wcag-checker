@@ -1,30 +1,23 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import WcagCard from '../wcag-card/WcagCard';
 import { AnimatePresence } from 'framer-motion';
 import { selectFilteredWcags } from '../../redux/orm/ormSelectors';
 
-import useStyles from './WcagCardListStyles';
+import './WcagCardList.scss';
 
 function WcagCardList() {
   const fitleredResults = useSelector((state) => selectFilteredWcags(state));
-  const classes = useStyles();
 
   return (
-    <AnimatePresence>
-      <Grid
-        container
-        direction='column'
-        spacing={2}
-        className={classes.gridList}
-      >
+    <div className='wcag-card-list'>
+      <AnimatePresence>
         {fitleredResults.map((wcagSuccessCriteria) => {
           const { ref_id } = wcagSuccessCriteria;
           return <WcagCard key={ref_id} wcagGuideline={wcagSuccessCriteria} />;
         })}
-      </Grid>
-    </AnimatePresence>
+      </AnimatePresence>
+    </div>
   );
 }
 

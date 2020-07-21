@@ -1,0 +1,35 @@
+@import '../../colors';
+.wcag-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  background-color: #ffffff;
+  border-radius: 10px;
+  gap: 10px;
+
+  & > .card-checkbox-container {
+    display: flex;
+    border-right: 2px solid rgba($color: black, $alpha: 0.1);
+  }
+
+  & > .card-content {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-auto-rows: auto;
+
+    & > .card-header {
+      & > h3:after {
+        content: '';
+        display: block;
+        border-bottom: 3px solid $primary;
+        // width: 10%;
+        width: 81px;
+        position: relative;
+        bottom: -6px;
+      }
+    }
+
+    & > .card-tags {
+      padding-right: 20px;
+    }
+  }
+}

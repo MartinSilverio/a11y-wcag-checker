@@ -1,0 +1,11 @@
+@import '../../colors';
+
+#root-header {
+  // border: 2px black dashed;
+  background-color: $primary;
+  padding-left: 20px;
+  // box-shadow: 0 10px #6161b1;
+
+  box-shadow: 0 5px 5px rgba($color: $primary, $alpha: 0.4);
+  z-index: 1;
+}

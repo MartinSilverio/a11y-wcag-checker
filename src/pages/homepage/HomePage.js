@@ -1,18 +1,13 @@
 import React from 'react';
-import { makeStyles, Toolbar } from '@material-ui/core';
 import WcagCardList from '../../components/wcag-card-list/WcagCardList';
+import NavDrawer from '../../components/nav-drawer/NavDrawer';
 
-const useStyles = makeStyles((theme) => ({
-  content: {
-    padding: theme.spacing(4),
-  },
-}));
+import './HomePage.scss';
 
 function HomePage() {
-  const classes = useStyles();
   return (
-    <main className={classes.content}>
-      <Toolbar />
+    <main id='main-container'>
+      <NavDrawer />
       <WcagCardList />
     </main>
   );

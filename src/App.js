@@ -1,14 +1,8 @@
 import React from 'react';
-import { makeStyles, CssBaseline } from '@material-ui/core';
 import Header from './components/header/Header';
-import NavDrawer from './components/nav-drawer/NavDrawer';
 import HomePage from './pages/homepage/HomePage';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  },
-}));
+import './App.scss';
 
 //TODO Remove this later after normalizing data
 // const formattedData = WCAG_DATA.map(({ guidelines, ...otherData }) => {
@@ -22,13 +16,9 @@ const useStyles = makeStyles((theme) => ({
 // console.log(formattedData);
 
 function App() {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
-      <CssBaseline />
+    <div id='root-grid-container'>
       <Header />
-      <NavDrawer />
       <HomePage />
     </div>
   );
