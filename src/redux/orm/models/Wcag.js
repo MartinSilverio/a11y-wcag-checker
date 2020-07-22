@@ -21,6 +21,10 @@ class Wcag extends Model {
         wcag = Wcag.withId(action.payload.wcagId);
         wcag.tags.remove(action.payload.tagId);
         break;
+      case OrmActionTypes.TOGGLE_WCAG:
+        wcag = Wcag.withId(action.payload.wcagId);
+        wcag.checked = !wcag.checked;
+        break;
       default:
         break;
     }

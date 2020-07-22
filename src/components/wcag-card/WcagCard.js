@@ -6,7 +6,7 @@ import { Typography, IconButton, Collapse } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { motion } from 'framer-motion';
 
-import { toggleSuccessCriteria } from '../../redux/wcag/wcagActions';
+import { toggleWcag } from '../../redux/orm/ormActions';
 import { deleteTagFromWcag, addTagToWcag } from '../../redux/orm/ormActions';
 import { selectTags } from '../../redux/orm/ormSelectors';
 
@@ -28,10 +28,10 @@ function WcagCard({ wcagGuideline }) {
   } = wcagGuideline;
   const allTags = useSelector((state) => selectTags(state));
   const dispatch = useDispatch();
-  const handleToggleSuccessCriteria = useCallback(
-    () => dispatch(toggleSuccessCriteria(ref_id)),
-    [dispatch, ref_id]
-  );
+  const handleToggleWcag = useCallback(() => dispatch(toggleWcag(ref_id)), [
+    dispatch,
+    ref_id,
+  ]);
   const handleToggleExpand = () => {
     setExpanded(!expanded);
   };
@@ -56,10 +56,7 @@ function WcagCard({ wcagGuideline }) {
       exit={{ opacity: 0 }}
       positionTransition={{ type: 'tween' }}
     >
-      <div
-        className='card-checkbox-container'
-        onClick={handleToggleSuccessCriteria}
-      >
+      <div className='card-checkbox-container' onClick={handleToggleWcag}>
         <WcagCheckbox checked={checked} />
       </div>
 
@@ -70,17 +67,19 @@ function WcagCard({ wcagGuideline }) {
           </h3>
         </div>
         <div className='card-body'>
-          <p>
+          <p className='short-description'>{short_description}</p>
+          <p className='compliance-level'>
             <strong>Compliance Level:</strong> {level}
           </p>
-          <p>{short_description}</p>
-          <a href={url} variant='body1' className='card-link'>
-            External link to the W3C documentation on {ref_id}
-          </a>
+          <p>
+            <a href={url} variant='body1' className='card-link'>
+              External link to the W3C documentation on {ref_id}
+            </a>
+          </p>
 
           <div className='card-tags'>
             <label htmlFor={`tags-${ref_id}`}>
-              <strong>Tags for {ref_id}</strong>
+              <strong>Tags for {ref_id}:</strong>
             </label>
             <ReactTags
               id={`tags-${ref_id}`}

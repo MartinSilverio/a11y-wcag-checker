@@ -14,6 +14,13 @@ export const toggleLevel = (levelId) => ({
   },
 });
 
+export const toggleWcag = (wcagId) => ({
+  type: OrmActionTypes.TOGGLE_WCAG,
+  payload: {
+    wcagId,
+  },
+});
+
 export const deleteTagFromWcag = (tagId, wcagId) => ({
   type: OrmActionTypes.DELETE_TAG_FROM_WCAG,
   payload: {
