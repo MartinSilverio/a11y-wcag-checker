@@ -1,9 +1,9 @@
-import React, { useCallback, useState, Fragment } from 'react';
+import React, { useCallback, Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ReactTags from 'react-tag-autocomplete';
 import WcagCheckbox from '../wcag-checkbox/WcagCheckbox';
-import { Typography, IconButton, Collapse } from '@material-ui/core';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Collapsible from '../collapsible/Collapsible';
+import { Typography } from '@material-ui/core';
 import { motion } from 'framer-motion';
 
 import { toggleWcag } from '../../redux/orm/ormActions';
@@ -13,7 +13,6 @@ import { selectTags } from '../../redux/orm/ormSelectors';
 import './WcagCard.scss';
 
 function WcagCard({ wcagGuideline }) {
-  const [expanded, setExpanded] = useState(false);
   const {
     ref_id,
     title,
@@ -32,9 +31,6 @@ function WcagCard({ wcagGuideline }) {
     dispatch,
     ref_id,
   ]);
-  const handleToggleExpand = () => {
-    setExpanded(!expanded);
-  };
 
   const handleAddTag = (tag) => {
     let tagPayload = tag.id
@@ -93,34 +89,30 @@ function WcagCard({ wcagGuideline }) {
           </div>
         </div>
         <div className='card-footer'>
-          <IconButton
-            aria-label={`Show more about ${ref_id}`}
-            onClick={handleToggleExpand}
-            aria-expanded={expanded}
+          <Collapsible
+            headerAriaLabel={`Show more about ${ref_id}`}
+            title='Detailed Info'
           >
-            <ExpandMoreIcon />
-          </IconButton>
-        </div>
-        <Collapse in={expanded} timeout='auto' unmountOnExit>
-          <div className='card-more-info'>
-            <Typography>{description}</Typography>
-            <ul>
-              {special_cases &&
-                special_cases.map(({ title }, ndx) => (
-                  <li key={ndx}>
-                    <Typography paragraph>{title}</Typography>
-                  </li>
-                ))}
-            </ul>
+            <div className='card-more-info'>
+              <Typography>{description}</Typography>
+              <ul>
+                {special_cases &&
+                  special_cases.map(({ title }, ndx) => (
+                    <li key={ndx}>
+                      <Typography paragraph>{title}</Typography>
+                    </li>
+                  ))}
+              </ul>
 
-            {notes && (
-              <Fragment>
-                <Typography variant='h4'>Notes</Typography>
-                <Typography>{notes[0].content}</Typography>
-              </Fragment>
-            )}
-          </div>
-        </Collapse>
+              {notes && (
+                <Fragment>
+                  <Typography variant='h4'>Notes</Typography>
+                  <Typography>{notes[0].content}</Typography>
+                </Fragment>
+              )}
+            </div>
+          </Collapsible>
+        </div>
       </div>
     </motion.div>
   );
