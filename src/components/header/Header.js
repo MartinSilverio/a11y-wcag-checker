@@ -30,6 +30,9 @@ function Header() {
         <AccessibilityNewIcon aria-hidden={true} fontSize='large' />
         <Typography variant='h1'>A11y-Checker</Typography>
       </Toolbar> */}
+      <button className='mobile-open-menu' onClick={handleDrawerToggle}>
+        <i className='fas fa-bars'></i>
+      </button>
       <h1>A11y-Checker</h1>
     </header>
   );

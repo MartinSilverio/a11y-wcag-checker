@@ -1,7 +1,37 @@
 #main-container {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: minmax(auto, 350px) 3fr;
   gap: 20px;
 
+  grid-template-areas: 'drawer content';
+
   overflow: hidden;
+
+  & > .nav-drawer {
+    grid-area: drawer;
+  }
+
+  & > .wcag-card-list {
+    grid-area: content;
+  }
+
+  /* Portrait and Landscape */
+  @media only screen and (max-width: 812px) {
+    & > .nav-drawer {
+      transform: translateX(-100%);
+
+      transition: 200ms ease;
+      z-index: 1;
+      position: relative;
+
+      &.drawer-open {
+        transform: translateX(0%);
+      }
+    }
+
+    & > .wcag-card-list {
+      padding: 0 20px;
+      grid-area: drawer-start / drawer-start / content-end / content-end;
+    }
+  }
 }

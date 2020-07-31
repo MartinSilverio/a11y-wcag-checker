@@ -1,11 +1,29 @@
 @import '../../colors';
 
 #root-header {
+  display: flex;
   // border: 2px black dashed;
   background-color: $primary;
   padding-left: 20px;
   // box-shadow: 0 10px #6161b1;
 
   box-shadow: 0 5px 5px rgba($color: $primary, $alpha: 0.4);
-  z-index: 1;
+  z-index: 2;
+
+  & > .mobile-open-menu {
+    display: none;
+  }
+
+  /* Portrait and Landscape */
+  @media only screen and (max-width: 812px) {
+    padding-left: 0;
+
+    & > .mobile-open-menu {
+      display: block;
+      background-color: transparent;
+      border: none;
+      font-size: 24px;
+      width: 60px;
+    }
+  }
 }

@@ -11,6 +11,10 @@
     border-right: 2px solid rgba($color: black, $alpha: 0.1);
   }
 
+  .long-description {
+    margin-top: 0;
+  }
+
   & > .card-content {
     display: grid;
     grid-template-rows: auto 1fr auto;

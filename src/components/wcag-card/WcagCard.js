@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import ReactTags from 'react-tag-autocomplete';
 import WcagCheckbox from '../wcag-checkbox/WcagCheckbox';
 import Collapsible from '../collapsible/Collapsible';
-import { Typography } from '@material-ui/core';
 import { motion } from 'framer-motion';
 
 import { toggleWcag } from '../../redux/orm/ormActions';
@@ -94,20 +93,20 @@ function WcagCard({ wcagGuideline }) {
             title='Detailed Info'
           >
             <div className='card-more-info'>
-              <Typography>{description}</Typography>
+              <p className='long-description'>{description}</p>
               <ul>
                 {special_cases &&
                   special_cases.map(({ title }, ndx) => (
                     <li key={ndx}>
-                      <Typography paragraph>{title}</Typography>
+                      <p>{title}</p>
                     </li>
                   ))}
               </ul>
 
               {notes && (
                 <Fragment>
-                  <Typography variant='h4'>Notes</Typography>
-                  <Typography>{notes[0].content}</Typography>
+                  <h4>Notes</h4>
+                  <p>{notes[0].content}</p>
                 </Fragment>
               )}
             </div>

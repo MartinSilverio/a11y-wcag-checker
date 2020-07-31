@@ -8,7 +8,7 @@ import { selectLevels, selectTags } from '../../redux/orm/ormSelectors';
 
 import './NavDrawer.scss';
 
-function NavDrawer(props) {
+function NavDrawer({ className }) {
   const navDrawerOpen = useSelector(selectOpenNav);
   const complianceLevels = useSelector((state) => selectLevels(state));
   const tags = useSelector((state) => selectTags(state));
@@ -34,7 +34,11 @@ function NavDrawer(props) {
   );
 
   return (
-    <aside className='nav-drawer'>
+    <aside
+      className={`nav-drawer ${
+        navDrawerOpen ? `drawer-open` : `drawer-closed`
+      }`}
+    >
       <FilterList
         title='Compliance Level'
         listOfFilters={complianceLevels}
