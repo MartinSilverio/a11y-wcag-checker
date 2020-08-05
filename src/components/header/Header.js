@@ -1,9 +1,6 @@
 import React from 'react';
-import MenuIcon from '@material-ui/icons/Menu';
-import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
 import { useDispatch } from 'react-redux';
 import { toggleNavMenu } from '../../redux/nav/navActions';
-
 import './Header.scss';
 
 function Header() {

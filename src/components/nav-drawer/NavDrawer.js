@@ -1,10 +1,12 @@
 import React, { useCallback } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import FilterList from '../filterList/FilterList';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleNavMenu } from '../../redux/nav/navActions';
 import { toggleLevel, toggleTag } from '../../redux/orm/ormActions';
 import { selectOpenNav } from '../../redux/nav/navSelector';
 import { selectLevels, selectTags } from '../../redux/orm/ormSelectors';
+import useWindoDimensions from '../../util/useWindowDimensions';
+import { MOBILE_BREAKPOINT } from '../../util/constants';
 
 import './NavDrawer.scss';
 
@@ -12,12 +14,9 @@ function NavDrawer({ className }) {
   const navDrawerOpen = useSelector(selectOpenNav);
   const complianceLevels = useSelector((state) => selectLevels(state));
   const tags = useSelector((state) => selectTags(state));
+  const { width } = useWindoDimensions();
 
   const dispatch = useDispatch();
-
-  const handleDrawerToggle = () => {
-    dispatch(toggleNavMenu());
-  };
 
   const handleLevelFilters = useCallback(
     (value) => {
@@ -34,33 +33,18 @@ function NavDrawer({ className }) {
   );
 
   return (
-    <aside
-      className={`nav-drawer ${
-        navDrawerOpen ? `drawer-open` : `drawer-closed`
-      }`}
-    >
-      <FilterList
-        title='Compliance Level'
-        listOfFilters={complianceLevels}
-        onFilterCheck={handleLevelFilters}
-      />
-      <FilterList
-        title='Filter By Tags'
-        listOfFilters={tags}
-        onFilterCheck={handleTagFilters}
-      />
-      {/* <Hidden smUp implementation='css'>
-        <Drawer
-          variant='temporary'
-          anchor='left'
-          open={navDrawerOpen}
-          onClose={handleDrawerToggle}
-          classes={{
-            paper: classes.drawerPaper,
-          }}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
+    <AnimatePresence>
+      {(width > MOBILE_BREAKPOINT ||
+        (navDrawerOpen && width <= MOBILE_BREAKPOINT)) && (
+        <motion.aside
+          key='nav-drawer'
+          className={`nav-drawer ${
+            navDrawerOpen ? `drawer-open` : `drawer-closed`
+          }`}
+          initial={{ x: '-100%' }}
+          animate={{ x: 0 }}
+          transition={{ duration: 0.2 }}
+          exit={{ x: '-100%' }}
         >
           <FilterList
             title='Compliance Level'
@@ -72,22 +56,17 @@ function NavDrawer({ className }) {
             listOfFilters={tags}
             onFilterCheck={handleTagFilters}
           />
-        </Drawer>
-      </Hidden> */}
-      {/* <Hidden xsDown> */}
-      {/* <Drawer
-          className={classes.drawer}
-          variant='permanent'
-          classes={{
-            paper: classes.drawerPaper,
-          }}
-        >
-          <Toolbar />
-          
-        </Drawer> */}
-      {/* </Hidden> */}
-    </aside>
+        </motion.aside>
+      )}
+    </AnimatePresence>
   );
 }
 
 export default NavDrawer;
+
+// animate={
+//   (navDrawerOpen && width <= MOBILE_BREAKPOINT) ||
+//   width > MOBILE_BREAKPOINT
+//     ? 'open'
+//     : 'closed'
+// }

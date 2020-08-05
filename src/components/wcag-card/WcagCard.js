@@ -48,6 +48,8 @@ function WcagCard({ wcagGuideline }) {
     <motion.div
       className='wcag-card'
       key={ref_id}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       positionTransition={{ type: 'tween' }}
     >
