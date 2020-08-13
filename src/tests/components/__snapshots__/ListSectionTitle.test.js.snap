@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListSectionTitle should have a title wrapped in h2 if title exists 1`] = `
+<h2
+  className="list-section-title"
+>
+  Hello World
+</h2>
+`;
+
+exports[`ListSectionTitle should have closing h2 tag if title doesn't exist 1`] = `
+<h2
+  className="list-section-title"
+/>
+`;

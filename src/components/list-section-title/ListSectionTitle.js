@@ -1,8 +1,8 @@
 import React from 'react';
-import { ListSubheader } from '@material-ui/core';
+import './ListSectionTitle.scss';
 
 function ListSectionTitle({ title }) {
-  return <ListSubheader>{title}</ListSubheader>;
+  return <h2 className='list-section-title'>{title}</h2>;
 }
 
 export default ListSectionTitle;
