@@ -1,9 +1,10 @@
+// @ts-expect-error ts-migrate(7016) FIXME: Could not find a declaration file for module 'redu... Remove this comment to see the full error message
 import { Model } from 'redux-orm';
 import OrmActionTypes from '../ormTypes';
 
 class Tag extends Model {
   static modelName = 'Tag';
-  static reducer(action, Tag) {
+  static reducer(action: any, Tag: any) {
     let tag;
     switch (action.type) {
       case OrmActionTypes.TOGGLE_TAG:

@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   openNav: false,
 };
 
-const navReducer = (state = INITIAL_STATE, action) => {
+const navReducer = (state = INITIAL_STATE, action: any) => {
   switch (action.type) {
     case NavActionTypes.TOGGLE_NAV_MENU:
       return {

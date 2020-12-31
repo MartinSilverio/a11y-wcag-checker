@@ -1,3 +1,4 @@
+// @ts-expect-error ts-migrate(7016) FIXME: Could not find a declaration file for module 'redu... Remove this comment to see the full error message
 import { Model, many, fk } from 'redux-orm';
 import OrmActionTypes from '../ormTypes';
 
@@ -10,7 +11,7 @@ class Wcag extends Model {
   static options = {
     idAttribute: 'ref_id',
   };
-  static reducer(action, Wcag) {
+  static reducer(action: any, Wcag: any) {
     let wcag;
     switch (action.type) {
       case OrmActionTypes.ADD_TAG_TO_WCAG:

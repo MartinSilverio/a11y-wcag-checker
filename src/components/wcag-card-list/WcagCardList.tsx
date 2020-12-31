@@ -1,5 +1,7 @@
 import React from 'react';
+// @ts-expect-error ts-migrate(7016) FIXME: Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { useSelector } from 'react-redux';
+// @ts-expect-error ts-migrate(6142) FIXME: Module '../wcag-card/WcagCard' was resolved to 'C:... Remove this comment to see the full error message
 import WcagCard from '../wcag-card/WcagCard';
 import { AnimatePresence } from 'framer-motion';
 import { selectFilteredWcags } from '../../redux/orm/ormSelectors';
@@ -7,13 +9,16 @@ import { selectFilteredWcags } from '../../redux/orm/ormSelectors';
 import './WcagCardList.scss';
 
 function WcagCardList() {
-  const fitleredResults = useSelector((state) => selectFilteredWcags(state));
+  const fitleredResults = useSelector((state: any) => selectFilteredWcags(state));
 
   return (
+    // @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
     <div className='wcag-card-list'>
+      {/* @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
       <AnimatePresence>
-        {fitleredResults.map((wcagSuccessCriteria) => {
+        {fitleredResults.map((wcagSuccessCriteria: any) => {
           const { ref_id } = wcagSuccessCriteria;
+          // @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
           return <WcagCard key={ref_id} wcagGuideline={wcagSuccessCriteria} />;
         })}
       </AnimatePresence>

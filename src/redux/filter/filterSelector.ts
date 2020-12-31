@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-export const selectFilters = (state) => state.filter;
+export const selectFilters = (state: any) => state.filter;
 
 export const selectComplianceLevels = createSelector(
   [selectFilters],

@@ -1,3 +1,4 @@
+// @ts-expect-error ts-migrate(7016) FIXME: Could not find a declaration file for module 'redu... Remove this comment to see the full error message
 import { createSelector } from 'redux-orm';
 import { orm } from './ormReducer';
 
@@ -8,34 +9,38 @@ export const selectTags = createSelector(orm.Tag);
 export const selectLevels = createSelector(orm.Level);
 
 //Filtered
-export const selectFilteredWcags = createSelector(orm, ({ Wcag }) => {
+export const selectFilteredWcags = createSelector(orm, ({
+  Wcag
+}: any) => {
   return Wcag.all()
     .toModelArray()
-    .filter((wcag) => {
+    .filter((wcag: any) => {
       const level = wcag.level.ref;
       const hasFilteredLevel = level.checked;
 
       const tags = wcag.tags.toModelArray();
 
-      const hasFilteredTags = tags.filter((tag) => tag.checked).length;
+      const hasFilteredTags = tags.filter((tag: any) => tag.checked).length;
 
       return hasFilteredLevel && hasFilteredTags;
     })
-    .map((wcag) => ({
-      ...wcag.ref,
-      tags: wcag.tags.toRefArray(),
-    }));
+    .map((wcag: any) => ({
+    ...wcag.ref,
+    tags: wcag.tags.toRefArray()
+  }));
 });
-export const selectFilteredLevelWcags = createSelector(orm, ({ Wcag }) => {
+export const selectFilteredLevelWcags = createSelector(orm, ({
+  Wcag
+}: any) => {
   return Wcag.all()
     .toModelArray()
-    .filter((wcag) => {
+    .filter((wcag: any) => {
       const level = wcag.level.ref;
       const hasFilteredLevel = level.checked;
 
       return hasFilteredLevel;
     })
-    .map((wcag) => wcag.ref);
+    .map((wcag: any) => wcag.ref);
 });
 
 // TODO Clean up examples
